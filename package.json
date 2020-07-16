@@ -1,0 +1,25 @@
+{
+  "name": "social-media-queries",
+  "version": "1.0.0",
+  "description": "For this assessment, you'll be writing a backend service that executes SQL queries to manipulate rows in a database for a social media application.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Spurgeon_Greg/social-media-queries.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Spurgeon_Greg/social-media-queries/issues"
+  },
+  "homepage": "https://gitlab.com/Spurgeon_Greg/social-media-queries#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.0"
+  }
+}
