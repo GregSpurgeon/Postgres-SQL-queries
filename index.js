@@ -10,17 +10,27 @@ const client = new Client({
 });
 
 // route handlers go here
-app.get('/users', (req, res) => {
-  client.query('SELECT * FROM users', (err, result) => {
+app.get('/users', async (req, res) => {
+  try{ await
+      client.query('SELECT * FROM users', (err, result) => {
       res.send(result.rows);
   });
-});
+  }catch(err){
+    req.log.error(err.message);
+    res.status(500).send("Internal Server Error");
+    }
+})
 
-app.get('/users/:id', (req, res) => {
-  console.log(req.params.id)
+app.get('/users/:id', async (req, res) => {
+  // console.log(req.params.id)
+try{ await
   client.query(`SELECT * FROM users WHERE id = ${req.params.id}`, (err, result) => {
-      res.send(result.rows[0]);
+    res.send(result.rows[0]);
   });
+}catch(err){
+    req.log.error(err.message);
+    res.status(404).send("Page not found");
+  }
 });
 
 app.post('/users', (req, res) => {
